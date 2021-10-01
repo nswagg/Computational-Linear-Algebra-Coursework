@@ -2,7 +2,7 @@
  * @author Nick Waggoner
  * Computational Linear Algebra
  * Due Dec 4, 2020
- * 
+ * This is the first rendition. There is a shorter, cleaner version 4-1 in the Repo
  * Description:
  * 	This program computes where given 3D points intersect an image plane with a given focal length.
  * 	The program is also designed to rotate a set of points about a plane and perform similar calculations.
