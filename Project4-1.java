@@ -60,7 +60,8 @@ public class Project4 {
 			
 			//Checking for the specific rotation matrix. We need the rotate on the 3rd entity, so check fLengths[2]
 			if(i == 2) { 
-				double[][] homPt = multiplyMatrices(focalMat, rotation(hom, rotateVal));//Captures the Homogeneous point multiplication for the special rotation case
+				//Captures the Homogeneous point multiplication for the special rotation case
+				double[][] homPt = multiplyMatrices(focalMat, rotation(hom, rotateVal));
 				double[][] coordPt = coordinate(homPt);		//Captures the Image's coordinate points
 				RotateOut(testPt, fLengths[i], coordPt);	//Prints out the Image Projection
 			}
