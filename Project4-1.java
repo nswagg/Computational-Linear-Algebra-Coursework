@@ -155,11 +155,15 @@ public class Project4 {
 		
 	}//multiplyMatrices
 
-    public static void StringOut(double[][] pt, int focal, double[][] coords) {
-    	System.out.printf("Image Projection of point [%.0f,%.0f,%.0f] with focal length %d is [%.2f,%.2f].\n",pt[0][0], pt[0][1], pt[0][2], focal, coords[0][0], coords[1][0]);
+        public static void StringOut(double[][] pt, int focal, double[][] coords) {
+    	System.out.printf("Image Projection of point "
+    			+ "[%.0f,%.0f,%.0f] with focal length %d is [%.2f,%.2f].\n",
+    			pt[0][0], pt[0][1], pt[0][2], focal, coords[0][0], coords[1][0]);
     }//StringOut
     
     public static void RotateOut(double[][] pt, int focal, double[][] coords) {
-    	System.out.printf("Image Projection of point [%.0f,%.0f,%.0f] rotated PI/4 radians with focal length %d is [%.2f,%.2f].\n",pt[0][0], pt[0][1], pt[0][2], focal, coords[0][0], coords[1][0]);
+    	System.out.printf("Image Projection of point "
+    			+ "[%.0f,%.0f,%.0f] rotated PI/4 radians with focal length %d is [%.2f,%.2f].\n",
+    			pt[0][0], pt[0][1], pt[0][2], focal, coords[0][0], coords[1][0]);
     }//RotateOut
 }//Project4
