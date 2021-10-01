@@ -53,23 +53,23 @@ public class Project4 {
 	/ "rotation" is the corresponding rotation matrix using PI/4 in this example
 	/****************************************************************************************/
 	public static void mainHelper(double[][] testPt, int[] fLengths, double rotateVal ) {
-		double[][] hom = homogeneous(testPt);					//Converts point to Homogeneous point
+		double[][] hom = homogeneous(testPt);	//Converts point to Homogeneous point
 		
 		for(int i = 0; i < fLengths.length; i++) {
-			double [][] focalMat = focalMat(fLengths[i]);		//Sets up focal lengths into a 3x4 matrix to find the coordinate points
+			double [][] focalMat = focalMat(fLengths[i]);	//Sets up focal lengths into a 3x4 matrix to find the coordinate points
 			
 			//Checking for the specific rotation matrix. We need the rotate on the 3rd entity, so check fLengths[2]
 			if(i == 2) { 
 				double[][] homPt = multiplyMatrices(focalMat, rotation(hom, rotateVal));//Captures the Homogeneous point multiplication for the special rotation case
-				double[][] coordPt = coordinate(homPt);									//Captures the Image's coordinate points
-				RotateOut(testPt, fLengths[i], coordPt);								//Prints out the Image Projection
+				double[][] coordPt = coordinate(homPt);		//Captures the Image's coordinate points
+				RotateOut(testPt, fLengths[i], coordPt);	//Prints out the Image Projection
 			}
 			
 			//Every other case. Not great to check every time, but uses less code than hard-coding the full block. More reusable.
 			else {
-				double[][] homPt = multiplyMatrices(focalMat, hom);			//Captures the Homogeneous point multiplication
-				double[][] coordPt = coordinate(homPt);									//Captures the Image's coordinate points
-				StringOut(testPt, fLengths[i], coordPt);								//Prints out the Image Projection
+				double[][] homPt = multiplyMatrices(focalMat, hom);//Captures the Homogeneous point multiplication
+				double[][] coordPt = coordinate(homPt);		//Captures the Image's coordinate points
+				StringOut(testPt, fLengths[i], coordPt);	//Prints out the Image Projection
 			}
 		}
 		
